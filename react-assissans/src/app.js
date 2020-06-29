@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar";
 import Main from "./components/main";
+import MoviesGrid from "./components/MoviesGrid";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState("X");
+  const [selectedMovie, setSelectedMovie] = useState("")
 
   const handleMovies = (moviesResult) => {
     return setMovies(moviesResult);
@@ -15,10 +17,16 @@ function App() {
     setQuery(searchText);
   }
 
+  function selectedId(id){
+    setSelectedMovie(id);
+    
+  }
+
   return (
     <div>
       <Navbar handleQuery={handleQuery} handleMovies={handleMovies} />
       <Main moviesData={movies} />
+      <MoviesGrid  selected={selectedId}/>
     </div>
   );
 }

@@ -5,7 +5,7 @@ function MovieItem(props) {
   const { item } = props;
   const img = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
   console.log(item);
-  return (
+   return (
     <div>
       <Card style={{ width: "20rem", hieght: "10rem" }}>
         <Card.Img variant="top" src={img} />
