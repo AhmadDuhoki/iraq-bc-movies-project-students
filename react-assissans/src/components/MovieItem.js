@@ -4,19 +4,19 @@ import { Card, Badge } from "react-bootstrap";
 function MovieItem(props) {
   const { item } = props;
   const img = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
-  console.log(item);
 
-  const overview = item.overview.substr(0, 240);
   return (
     <div>
       <Card style={{ width: "20rem", hieght: "10rem" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
-          <Card.Text>{overview}</Card.Text>
-          <Card.Text>
-            <Badge variant="success">{item.vote_average}</Badge>
-          </Card.Text>
+          <Badge className="" variant="success">
+            {item.vote_average}
+          </Badge>
+          <Badge className="ml-2" variant="primary">
+            {item.release_date}
+          </Badge>
         </Card.Body>
       </Card>
     </div>

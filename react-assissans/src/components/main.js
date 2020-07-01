@@ -7,12 +7,12 @@ export default function Main(props) {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   return (
-    <React.Fragment>
+    <div>
       <BrowserRouter>
-        <Route path="/MoviePage" component={MoviePage} />
-      </BrowserRouter>
+        <Route path="/MoviePage/:id" exact component={MoviePage} />
 
-      <MoviesGrid movies={props.moviesData.map((data) => data)} />
-    </React.Fragment>
+        <MoviesGrid movies={props.moviesData.map((data) => data)} />
+      </BrowserRouter>
+    </div>
   );
 }
