@@ -9,7 +9,7 @@ function MoviesGrid(props) {
       <Row>
         {props.movies.map((movies) => (
           <Link to={`/MoviePage/${movies.id}`}>
-            <Col lg="6">
+            <Col lg="4">
               <MovieItem item={movies} />
             </Col>
           </Link>
