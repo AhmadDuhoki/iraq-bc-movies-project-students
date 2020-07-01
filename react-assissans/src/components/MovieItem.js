@@ -10,10 +10,11 @@ function MovieItem(props) {
       <Card
         style={{
           width: "20rem",
-          height: "50rem",
+          height: "auto",
           margin: "10px",
           border: "3px solid #E7806B",
           borderRadius: "8px",
+          boxShadow: "5px 5px #eee",
         }}
       >
         <Card.Img
@@ -31,13 +32,12 @@ function MovieItem(props) {
           >
             {item.title}
           </Card.Title>
-          <Card.Text
-            style={{ fontFamily: "times New Roman", color: "#573329" }}
-          >
-            {overview}
-          </Card.Text>
+
           <Card.Text>
             <Badge variant="success">{item.vote_average}</Badge>
+            <Badge className="ml-2" variant="primary">
+              {item.release_date}
+            </Badge>
           </Card.Text>
         </Card.Body>
       </Card>

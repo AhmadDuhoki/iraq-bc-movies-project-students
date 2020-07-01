@@ -7,9 +7,30 @@ const moviesUrl =
 function navBar(props) {
   return (
     <>
-      <Navbar style={{backgroundColor: "#E7806B"}} className="justify-content-between">
-        <Navbar.Brand href="#" style={{fontWeight:"bold",fontFamily:"'Yellowtail', cursive" ,fontSize:"35px" ,color:"#573329"}}>Assassins Movies</Navbar.Brand>
-        <Nav className="mr-auto" style={{fontWeight:"bold",fontFamily:"Times New Roman" ,fontSize:"20px" , color:"#573329"}}>
+      <Navbar
+        style={{ backgroundColor: "#E7806B" }}
+        className="justify-content-between"
+      >
+        <Navbar.Brand
+          href="#"
+          style={{
+            fontWeight: "bold",
+            fontFamily: "'Yellowtail', cursive",
+            fontSize: "35px",
+            color: "#573329",
+          }}
+        >
+          Assassins Movies
+        </Navbar.Brand>
+        <Nav
+          className="mr-auto"
+          style={{
+            fontWeight: "bold",
+            fontFamily: "Times New Roman",
+            fontSize: "20px",
+            color: "#573329",
+          }}
+        >
           <Nav.Link href="#home">Home</Nav.Link>
         </Nav>
         <SearchBox onHandle={props.handleQuery} onSubmit={props.handleMovies} />
@@ -18,18 +39,12 @@ function navBar(props) {
   );
 }
 
-
 function SearchBox(props) {
   const [value, setValue] = useState("");
   let [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
-    setLoading(true);
     setValue(event.target.value);
-    props.onHandle(event.target.value);
-    moviesData(value).then((moviesArr) => {
-      setLoading(false);
-    });
   };
   const handleSubmit = (event) => {
     setLoading(true);
@@ -44,14 +59,18 @@ function SearchBox(props) {
     <>
       <form className="form-inline my-2 " onSubmit={handleSubmit}>
         <input
-        style={{borderColor:"#573329"}}
+          style={{ borderColor: "#573329" }}
           className="form-control"
           type="search"
           placeholder="Search for a Movie"
           value={value}
           onChange={handleChange}
         ></input>
-        <button  className=" btn ml-3" style={{backgroundColor:"#E1DDDC"}}type="submit">
+        <button
+          className=" btn ml-3"
+          style={{ backgroundColor: "#E1DDDC" }}
+          type="submit"
+        >
           Search
         </button>
       </form>
@@ -62,7 +81,12 @@ function SearchBox(props) {
 
 const Loading = () => {
   return (
-    <Spinner animation="grow" role="status" variant="secondary" className="ml-4">
+    <Spinner
+      animation="grow"
+      role="status"
+      variant="secondary"
+      className="ml-4"
+    >
       <span className="sr-only spin">Loading...</span>
     </Spinner>
   );

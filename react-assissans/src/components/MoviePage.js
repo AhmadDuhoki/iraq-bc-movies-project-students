@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Card, Badge, Row, Col } from "react-bootstrap";
 
 export default function MoviePage({ match }) {
-  console.log(match.params.id);
   const [movie, setMovie] = useState([]);
   useEffect(() => {
     fetchMovie();
@@ -17,7 +16,6 @@ export default function MoviePage({ match }) {
       });
   }
   const img = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  console.log(movie);
   return (
     <div>
       <Row>

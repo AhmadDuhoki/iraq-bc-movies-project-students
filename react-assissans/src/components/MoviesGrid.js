@@ -8,7 +8,7 @@ function MoviesGrid(props) {
     <Container className="mt-5">
       <Row>
         {props.movies.map((movies) => (
-          <Link to={`/MoviePage/${movies.id}`}>
+          <Link key={movies.id} to={`/MoviePage/${movies.id}`}>
             <Col lg="4">
               <MovieItem item={movies} />
             </Col>
