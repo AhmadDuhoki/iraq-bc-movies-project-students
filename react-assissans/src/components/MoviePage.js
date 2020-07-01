@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Card, Badge, Row, Col } from "react-bootstrap";
-
+import { Card, Badge, Row, Col, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 export default function MoviePage({ match }) {
   const [movie, setMovie] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     fetchMovie();
   }, []);
@@ -15,9 +16,15 @@ export default function MoviePage({ match }) {
         setMovie(movieItem);
       });
   }
+  function backToHome() {
+    history.goBack();
+  }
   const img = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   return (
     <div>
+      <Button className="my-3 mx-3" variant="primary" onClick={backToHome}>
+        Back to home
+      </Button>
       <Row>
         <Col>
           <Card
