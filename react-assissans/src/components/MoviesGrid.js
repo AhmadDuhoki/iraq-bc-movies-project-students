@@ -8,7 +8,7 @@ function MoviesGrid(props) {
     <Container className="mt-5">
       <Row>
         {props.movies.map((movies) => (
-          <Col lg="6">
+          <Col lg="4">
             <MovieItem item={movies} />
           </Col>
         ))}

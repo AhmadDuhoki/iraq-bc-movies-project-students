@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './index.css'
 import Navbar from "./components/navbar";
 import Main from "./components/main";
 import MoviesGrid from "./components/MoviesGrid";
